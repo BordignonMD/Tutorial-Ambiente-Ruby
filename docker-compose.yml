@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    container_name: tutorialambienteruby-db
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+  web:
+    container_name: tutorialambienteruby-web
+    build: .
+    entrypoint: /TutorialAmbienteRuby/docker-entrypoint.sh
+    command: ["rails", "server", "-b", "0.0.0.0"]
+    volumes:
+      - .:/TutorialAmbienteRuby
+    ports:
+      - '3000:3000'
+    depends_on: 
+      - db
