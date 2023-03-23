@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application contains a Rails development environment with Docker.
 
-Things you may want to cover:
+## Installation local
 
-* Ruby version
+1. Clone this repository
 
-* System dependencies
+```
+git clone https://github.com/BordignonMD/Tutorial-Ambiente-Ruby.git
+```
 
-* Configuration
+2. Build Docker and Up container
 
-* Database creation
 
-* Database initialization
+```
+docker up --build
+```
 
-* How to run the test suite
+3.2. Create Database
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+docker-compose run web rake db:create
+```
 
-* Deployment instructions
+## Other commands
 
-* ...
+Run migrations
+
+```
+docker-compose run web rake db:migrate
+```
+
+Run Console
+
+```
+docker exec -it tutorialambienteruby-web bash
+rails c
+```
