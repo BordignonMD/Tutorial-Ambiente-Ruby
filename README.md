@@ -10,14 +10,16 @@ This application contains a Rails development environment with Docker.
 git clone https://github.com/BordignonMD/Tutorial-Ambiente-Ruby.git
 ```
 
-2. Build Docker and Up container
+2. Change App name. Replace all TutorialAmbienteRuby by new app name.
+
+3. Build Docker and Up container
 
 
 ```
 docker up --build
 ```
 
-3.2. Create Database
+4. Create Database
 
 ```
 docker-compose run web rake db:create
